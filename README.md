@@ -11,6 +11,7 @@
 | wechat-mp-publisher | 微信公众号远程发布（合规优化版） | `m9rco/hermes-skills/skills/wechat-mp-publisher` |
 | wechat-official-account-writer | 微信公众号写作发布助手 | `m9rco/hermes-skills/skills/wechat-official-account-writer` |
 | macos-calendar | macOS 日历操作（osascript 直连 Calendar.app） | `m9rco/hermes-skills/skills/macos-calendar` |
+| codex-desktop-login | Codex 桌面版 Google OAuth 登录（CDP 驱动） | `m9rco/hermes-skills/skills/codex-desktop-login` |
 
 ## 安装方式
 
