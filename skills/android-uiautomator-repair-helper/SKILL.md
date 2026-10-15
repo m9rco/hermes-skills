@@ -24,6 +24,11 @@ description: Use for offline uiautomator helper text repair on Android.
 - **同 note 编辑**：从已发布 note 菜单「编辑」进入 CapaPostNotePlatformActivity = 更新原 note（非新投稿）；底部「发布笔记」= 更新原篇（toast「发布成功！」+ 公开页显示「编辑于 刚刚」+ 同 note_id）。原 note 的 topic 修复需先只读 before（title/caption 双 SHA 匹配正式记录）才动。
 - **原生话题插入格式**：平台选中后自动插 `#话题` + **1 个 ASCII 尾空格**（如 `#穿搭 `）；正确结果以 body 全文 SHA 精确匹配预期为准，不 trim、不整段 setText。
 - **公开页 tag 点击验收**：修复后打开原 share URL → 滚动使 tag 可见 → 精确点击（tag 在正文单节点内，需 PNG 目视坐标）→ 进入 XhsReactActivity 话题聚合页 → Back 返回同 note = `public_clickability_verified`。
+- **逐项验证 header 必须匹配**：每项点 tag 后核**页 header 与所点 tag 名称对应**（话题名/浏览讨论计数行），仅 Activity 类名（XhsReactActivity）+ 泛内容不算证明；**同一页不能算多个 tag 成功**，错页/错位如实记 `mismatch`。长 tag 会换行、多 tag 挤在一个正文节点（无 per-tag bounds）——**不要用字符宽度估算坐标，也不要"点击→header 反推坐标→再试"循环**（实测两估点都落同一 #10）；正确做法：Back 回同 note，截一张 tag 实际可见 fresh PNG 上传给主控/用户目视定位后连续验证。
+- **canonical 与 UI 漂移 → 暂停发布 job**：canonical ledger `state=queued` 而 UI 已是公开笔记（来源 unknown 的外部发布）时防次日重复发布：先备份 pub job 完整原 record（enabled/schedule/next_run/script/no_agent/deliver/prompt 全字段），用官方 `cronjob_manage action=pause` 暂停并读回（enabled=false/state=paused），sample/report 及其它 jobs 不动；不删除/重建/改 prompt。
+- **剪贴板读取（取分享链接）**：`cmd clipboard get` 本机不可用；已复制内容可经 搜索框 EditText → `KEYCODE_PASTE` → dump XML 读 text 取出（注意区分个人主页口令 vs 单篇 note 口令——两者都可被粘贴）。
+- **portable 测试目录布局**：测试源码用 `parents[1]/prepare_note_input.py` 定位模块 → 全局 bundle 必须是 `scripts/android/prepare_note_input.py` + `scripts/android/tests/test_*.py` + `tests/fixtures/`；误平放 test 到 `scripts/android/` 根会被宽泛 unittest discover 捡到且 import 失败（找不到上级 prepare）。
+- **runtime/provenance 精确校正**：主控给 expected 文件时：先断言 actual 与 expected 仅允许路径（如 `validation_receipt` 子树 + `validation_receipt_sha256`）有差异、DISALLOWED=0，备份 before 后原子替换；inline 引用 SHA 用 `json.dumps(obj, ensure_ascii=False, sort_keys=True)` 无尾换行重算并与存储值比对，不一致必须同步更新引用。
 - **out-of-band 指示可能基于旧状态**：消息排队时 PNG/证据可能过期；执行前先核当前实际 UI（body 全文/hash/focus），不执行针对已消失状态的步骤（如清已提交的 composition）。
 - **MOVE_END 批量 DEL 危险**：MOVE_END 不保证全文末尾，31×DEL 会删**中间**段（173→142 中段丢失）。长多行正文禁盲批量退格；先只读 inspect 核 selection。
 - **caret 定位**：点真实字形 bounds（主控从 PNG 给坐标），不是上方空行；点后只读 inspect 核 `selection==length`。
