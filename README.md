@@ -13,6 +13,15 @@
 | macos-calendar | macOS 日历操作（osascript 直连 Calendar.app） | `m9rco/hermes-skills/skills/macos-calendar` |
 | codex-desktop-login | Codex 桌面版 Google OAuth 登录（CDP 驱动） | `m9rco/hermes-skills/skills/codex-desktop-login` |
 | tokenhub-hy-image | 腾讯 TokenHub Hy-Image 文生图/图生图（正确端点+脚本） | `m9rco/hermes-skills/skills/tokenhub-hy-image` |
+| android-device-automation | macOS↔安卓 adb 控制（小米/HyperOS 已验证，含排查矩阵） | `m9rco/hermes-skills/skills/android-device-automation` |
+| android-uiautomator-repair-helper | uiautomator 离线辅助文本修复 | `m9rco/hermes-skills/skills/android-uiautomator-repair-helper` |
+| xiaohongshu-android-reliable-publishing | 小红书笔记安卓端可靠发布/核验（ADB） | `m9rco/hermes-skills/skills/xiaohongshu-android-reliable-publishing` |
+| mem0 | Mem0 Platform 持久记忆（add/search/list/delete CLI） | `m9rco/hermes-skills/skills/mem0` |
+| duckduckgo-search | 免费无 key 的 web/news/image 搜索（ddgs） | `m9rco/hermes-skills/skills/duckduckgo-search` |
+| secure-credential-handoff | 一次性加密凭据交接协议（RSA-OAEP，仅内存） | `m9rco/hermes-skills/skills/secure-credential-handoff` |
+| kanban-orchestrator | Kanban 编排器分解 playbook + 反诱惑规则 | `m9rco/hermes-skills/skills/kanban-orchestrator` |
+| kanban-worker | Hermes Kanban worker 的坑/示例/边界情况 | `m9rco/hermes-skills/skills/kanban-worker` |
+| a2a-relay-polling | NAT 后 A2A relay hub 轮询接入（无需入站端口） | `m9rco/hermes-skills/skills/a2a-relay-polling` |
 
 ## 安装方式
 
@@ -24,6 +33,7 @@ hermes skills install m9rco/hermes-skills/skills/<skill-name>
 
 - `cos-report-publisher` 需要环境变量：`COS_SECRET_ID`、`COS_SECRET_KEY`（值不随技能分发）
 - 微信系列技能需要各自的 `WECHAT_APP_ID` / `WECHAT_APP_SECRET` 环境变量
+- `mem0` 需要 `MEM0_API_KEY` 环境变量
 
 ## 目录结构
 
