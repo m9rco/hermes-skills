@@ -1,0 +1,4 @@
+interface:
+  display_name: "腾讯云语音合成"
+  short_description: "通过腾讯云 TokenHub 将中英文文本合成为可播放语音，支持音色和语速调整"
+  default_prompt: "使用 $tencent-tokenhub-tts 将我提供的文字合成为中文 MP3 语音。"

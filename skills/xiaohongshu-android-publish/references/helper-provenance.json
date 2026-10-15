@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "packaged_at": "2026-10-15T09:35:21.586324+00:00",
+  "purpose": "public_helpers_only_no_credentials_or_current_task_state",
+  "files": [
+    {
+      "bundled_path": "scripts/normal_auth_envelope.py",
+      "original_relative_path": "ops/normal_auth_envelope.py",
+      "bytes": 5471,
+      "sha256": "7823aeb0333a0a2b4cccfe0e4fe027d0052e8f51d4731bec2c740c2607570d42",
+      "modified_from_original": false
+    },
+    {
+      "bundled_path": "scripts/normal_auth_transaction.py",
+      "original_relative_path": "ops/normal_auth_transaction.py",
+      "bytes": 6449,
+      "sha256": "c28c3f6d1d63981673b42aa3e50cd14401843c0ab64086a46183b32b4688cd2c",
+      "modified_from_original": false
+    },
+    {
+      "bundled_path": "scripts/normal_auth_screen_session.py",
+      "original_relative_path": "ops/normal_auth_screen_session.py",
+      "bytes": 14566,
+      "sha256": "af1fd943e15862e9244fe7545156f9cc97a181f6ee4daccfca3a99ed73b64fa9",
+      "modified_from_original": false
+    },
+    {
+      "bundled_path": "scripts/tests/test_normal_auth_transaction.py",
+      "original_relative_path": "ops/tests/test_normal_auth_transaction.py",
+      "bytes": 14822,
+      "sha256": "286fdccaa602537c0afe84612ba15816bb756a1df58ad3d3fa9c6601adcd9b0f",
+      "modified_from_original": false
+    },
+    {
+      "bundled_path": "scripts/tests/test_normal_auth_screen_session.py",
+      "original_relative_path": "ops/tests/test_normal_auth_screen_session.py",
+      "bytes": 14558,
+      "sha256": "1a80108a903fa6fca995991cfaff28a972753d72498f175e86cb374576ace140",
+      "modified_from_original": false
+    },
+    {
+      "bundled_path": "scripts/android/prepare_note_input.py",
+      "original_relative_path": "ops/android/note-input-native-prep-candidate/prepare_note_input.py",
+      "bytes": 9588,
+      "sha256": "dc75abff9b6251984986390d53ad4f8ae6f830c26023979ff9730967437b7749",
+      "modified_from_original": false,
+      "supersedes_sha256": "fcc88ab1c99a58cf1c690398e319e6525dae0d5252ba31d0505fb82fa0835c3f"
+    },
+    {
+      "bundled_path": "scripts/android/build_note_input.py",
+      "original_relative_path": "ops/android/build_note_input.py",
+      "bytes": 14084,
+      "sha256": "7ebb76f838dd96ea9b8e4b9cea57075eec78bc750f8c06708e1ff2a4faada1fa",
+      "modified_from_original": false
+    },
+    {
+      "bundled_path": "scripts/android/com/shenqi/input/XhsNoteInput.java",
+      "original_relative_path": "ops/android/com/shenqi/input/XhsNoteInput.java",
+      "bytes": 8881,
+      "sha256": "896349bd700c92422367a21790442ead7d26cce9c00ff5e3cd4833c057caba75",
+      "modified_from_original": false
+    },
+    {
+      "bundled_path": "scripts/android/tests/test_prepare_note_input.py",
+      "original_relative_path": "ops/android/note-input-native-prep-candidate/tests/test_prepare_note_input.py",
+      "bytes": 17696,
+      "sha256": "04d7606a95b2233e460b6c1208eaa682b11839ced1077ec10b3431c4d5c81987",
+      "modified_from_original": false,
+      "supersedes_sha256": "5c9c7f784d07b9dcd0d34fe15038464325702ae325bb00257830ee1eb175cc01"
+    },
+    {
+      "bundled_path": "scripts/android/tests/fixtures/prepare_note_input-legacy.py",
+      "original_relative_path": "ops/android/prepare_note_input.py",
+      "bytes": 6362,
+      "sha256": "fcc88ab1c99a58cf1c690398e319e6525dae0d5252ba31d0505fb82fa0835c3f",
+      "modified_from_original": false,
+      "purpose": "read_only_legacy_compatibility_fixture_not_active_helper"
+    }
+  ],
+  "upgraded_at": "2026-10-15T13:25:38.111888+00:00",
+  "native_topic_prepare_upgrade": {
+    "standalone_argv_preparation_only": true,
+    "default_full_caption_backward_compatible": true,
+    "prepare_tests_passed": 13,
+    "builder_tests_passed": 12,
+    "client_native_persistence": "project_specific_actual_verification_required; not_claimed_by_tool_tests",
+    "test_portability_fix": "legacy comparison fixture bundled with tests; no dependency on a workspace parent path"
+  }
+}

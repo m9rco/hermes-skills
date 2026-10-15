@@ -1,0 +1,4 @@
+interface:
+  display_name: "小红书 Android 发布与复盘"
+  short_description: "可靠填写中文图文、验证原生话题与声明，协调节点发布并采集真实转化指标"
+  default_prompt: "使用 $xiaohongshu-android-publish 准备并核验本次小红书图文，检查原生话题、声明与发布状态。"

@@ -23,6 +23,11 @@
 | kanban-worker | Hermes Kanban worker 的坑/示例/边界情况 | `m9rco/hermes-skills/skills/kanban-worker` |
 | a2a-relay-polling | NAT 后 A2A relay hub 轮询接入（无需入站端口） | `m9rco/hermes-skills/skills/a2a-relay-polling` |
 
+| cos-html-reports | 生成并上传 HTML 报告到腾讯云 COS，支持临时上传票据 | `m9rco/hermes-skills/skills/cos-html-reports` |
+| new-api-gateway-deploy | 部署 New-API 网关、nginx 与 HTTPS | `m9rco/hermes-skills/skills/new-api-gateway-deploy` |
+| tencent-tokenhub-tts | TokenHub 语音合成与原创音色设计 | `m9rco/hermes-skills/skills/tencent-tokenhub-tts` |
+| xiaohongshu-android-publish | 安卓小红书图文准备、核验与发布 | `m9rco/hermes-skills/skills/xiaohongshu-android-publish` |
+
 ## 安装方式
 
 ```bash
@@ -45,3 +50,8 @@ skills/
     scripts/        # 辅助脚本（可选）
     templates/      # 模板（可选）
 ```
+
+## Codex 与 Hermes 共享
+
+上述 4 个自定义技能同步自 Codex；安装后按各技能目录解析脚本与参考文件。
+本机可使用 `hermes config set skills.external_dirs '["/absolute/path/to/.codex/skills"]'` 直接共享 Codex 技能目录，后续修改无需重复复制。Codex 内置技能及插件依赖专用工具，未打包到本仓库。
